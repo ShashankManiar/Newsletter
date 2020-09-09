@@ -1,0 +1,143 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "workflows_LA_AzureUpdate_name": {
+      "defaultValue": "LA_AzureUpdate",
+      "type": "String"
+    },
+    "connections_rss_externalid": {
+      "defaultValue": "/subscriptions/fd17b4e4-9edb-46be-aeb7-23dccad4206e/resourceGroups/News_RG/providers/Microsoft.Web/connections/rss",
+      "type": "String"
+    },
+    "connections_sql_externalid": {
+      "defaultValue": "/subscriptions/fd17b4e4-9edb-46be-aeb7-23dccad4206e/resourceGroups/News_RG/providers/Microsoft.Web/connections/sql",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Logic/workflows",
+      "apiVersion": "2017-07-01",
+      "name": "[parameters('workflows_LA_AzureUpdate_name')]",
+      "location": "northeurope",
+      "properties": {
+        "state": "Enabled",
+        "definition": {
+          "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {
+            "$connections": {
+              "defaultValue": {},
+              "type": "Object"
+            }
+          },
+          "triggers": {
+            "Recurrence": {
+              "recurrence": {
+                "frequency": "Day",
+                "interval": 2
+              },
+              "type": "Recurrence"
+            }
+          },
+          "actions": {
+            "For_each": {
+              "foreach": "@body('List_Azure_Updates')",
+              "actions": {
+                "For_each_2": {
+                  "foreach": "@items('For_each')?['categories']",
+                  "actions": {
+                    "Insert_row_2": {
+                      "runAfter": {},
+                      "type": "ApiConnection",
+                      "inputs": {
+                        "body": {
+                          "Category": "@{items('For_each_2')}",
+                          "UpdateId": "@body('Insert_row')?['UpdateId']"
+                        },
+                        "host": {
+                          "connection": {
+                            "name": "@parameters('$connections')['sql']['connectionId']"
+                          }
+                        },
+                        "method": "post",
+                        "path": "/datasets/default/tables/@{encodeURIComponent(encodeURIComponent('[dbo].[UpdateCategory]'))}/items"
+                      }
+                    }
+                  },
+                  "runAfter": {
+                    "Insert_row": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "Foreach"
+                },
+                "Insert_row": {
+                  "runAfter": {},
+                  "type": "ApiConnection",
+                  "inputs": {
+                    "body": {
+                      "ItemId": "@items('For_each')['id']",
+                      "Link": "@items('For_each')?['primaryLink']",
+                      "PubOn": "@items('For_each')?['publishDate']",
+                      "Summary": "@items('For_each')?['summary']",
+                      "Title": "@items('For_each')['title']"
+                    },
+                    "host": {
+                      "connection": {
+                        "name": "@parameters('$connections')['sql']['connectionId']"
+                      }
+                    },
+                    "method": "post",
+                    "path": "/datasets/default/tables/@{encodeURIComponent(encodeURIComponent('[dbo].[Updates]'))}/items"
+                  }
+                }
+              },
+              "runAfter": {
+                "List_Azure_Updates": [
+                  "Succeeded"
+                ]
+              },
+              "type": "Foreach"
+            },
+            "List_Azure_Updates": {
+              "runAfter": {},
+              "type": "ApiConnection",
+              "inputs": {
+                "host": {
+                  "connection": {
+                    "name": "@parameters('$connections')['rss']['connectionId']"
+                  }
+                },
+                "method": "get",
+                "path": "/ListFeedItems",
+                "queries": {
+                  "feedUrl": "https://azurecomcdn.azureedge.net/en-gb/updates/feed/"
+                }
+              }
+            }
+          },
+          "outputs": {}
+        },
+        "parameters": {
+          "$connections": {
+            "value": {
+              "rss": {
+                "connectionId": "[parameters('connections_rss_externalid')]",
+                "connectionName": "rss",
+                "id": "/subscriptions/fd17b4e4-9edb-46be-aeb7-23dccad4206e/providers/Microsoft.Web/locations/northeurope/managedApis/rss"
+              },
+              "sql": {
+                "connectionId": "[parameters('connections_sql_externalid')]",
+                "connectionName": "sql",
+                "id": "/subscriptions/fd17b4e4-9edb-46be-aeb7-23dccad4206e/providers/Microsoft.Web/locations/northeurope/managedApis/sql"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
