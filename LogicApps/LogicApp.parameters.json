@@ -10,6 +10,12 @@
     },
     "connections_sql_externalid": {
       "value": null
+    },
+    "sql_1_encryptConnection": {
+      "value": true
+    },
+    "sql_1_privacySetting": {
+      "value": "Private"
     }
   }
 }

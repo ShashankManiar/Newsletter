@@ -194,73 +194,74 @@ where PubOn>=    @startdate and PubOn <=   @enddate
 
 Union All
 
-Select 'Data' ='<tr><td width=719 colspan=2 valign=top style='+''''+'width:539.5pt;border:solid #4472C4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt'+''''+'>
-<div class=WordSection1>
-<p style = '+'''margin:0cm;margin-bottom:.0001pt;	font-size:11.0pt;font-family:"Calibri",sans-serif;mso-fareast-language:EN-US;'+''''+'><b><span lang=EN-US>
-Other useful resources:</span></b></p>
+Select 'Data' =''
+--'<tr><td width=719 colspan=2 valign=top style='+''''+'width:539.5pt;border:solid #4472C4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt'+''''+'>
+--<div class=WordSection1>
+--<p style = '+'''margin:0cm;margin-bottom:.0001pt;	font-size:11.0pt;font-family:"Calibri",sans-serif;mso-fareast-language:EN-US;'+''''+'><b><span lang=EN-US>
+--Other useful resources:</span></b></p>
 
-<ul type=disc>
- <li style = '+'''margin:0cm;margin-bottom:.0001pt;	font-size:11.0pt;font-family:"Calibri",sans-serif;mso-fareast-language:EN-US;color:black;background:white'+''''+'><a
-     href="https://ptdrv.linkedin.com/xiuwz48"
-     >Curated list of articles about cloud architecture, patterns, best practices, Azure learning path and DevOps.</a></li>
-</ul>
+--<ul type=disc>
+-- <li style = '+'''margin:0cm;margin-bottom:.0001pt;	font-size:11.0pt;font-family:"Calibri",sans-serif;mso-fareast-language:EN-US;color:black;background:white'+''''+'><a
+--     href="https://ptdrv.linkedin.com/xiuwz48"
+--     >Curated list of articles about cloud architecture, patterns, best practices, Azure learning path and DevOps.</a></li>
+--</ul>
 
-<p class=MsoListParagraph style='+''''+'text-indent:-18.0pt'+'''><span lang=EN-US
-style='+'''font-family:Symbol'+'''>·<span style='+'''font:7.0pt "Times New Roman"'+'''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-US>Find out about Microsoft’s commitment to running
-Open Source solutions <b><a
-href="https://open.microsoft.com/">here</a></b></span></p>
+--<p class=MsoListParagraph style='+''''+'text-indent:-18.0pt'+'''><span lang=EN-US
+--style='+'''font-family:Symbol'+'''>·<span style='+'''font:7.0pt "Times New Roman"'+'''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+--</span></span><span lang=EN-US>Find out about Microsoft’s commitment to running
+--Open Source solutions <b><a
+--href="https://open.microsoft.com/">here</a></b></span></p>
 
-<p class=MsoListParagraph style='+''''+'text-indent:-18.0pt'+'''><span lang=EN-US
-style='+'''font-family:Symbol'+'''>·<span style='+'''font:7.0pt "Times New Roman"'+'''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-US>Having difficulty searching Azure Documentation?
-Use </span><a
-href="https://azure.microsoft.com/en-us/documentation/articles"
->
-<b><span
-lang=EN-US>this link</span></b></a> <span lang=EN-US>to easily search/browse
-Azure docs online</span></p>
+--<p class=MsoListParagraph style='+''''+'text-indent:-18.0pt'+'''><span lang=EN-US
+--style='+'''font-family:Symbol'+'''>·<span style='+'''font:7.0pt "Times New Roman"'+'''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+--</span></span><span lang=EN-US>Having difficulty searching Azure Documentation?
+--Use </span><a
+--href="https://azure.microsoft.com/en-us/documentation/articles"
+-->
+--<b><span
+--lang=EN-US>this link</span></b></a> <span lang=EN-US>to easily search/browse
+--Azure docs online</span></p>
 
-<p class=MsoListParagraph style='+''''+'text-indent:-18.0pt'+'''><span lang=EN-US
-style='+'''font-family:Symbol'+'''>·<span style='+'''font:7.0pt "Times New Roman"'+'''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-US>Want to meetup with other likeminded Azure
-folk?&nbsp; Check out the </span><a
-href="http://www.meetup.com/UKAzureUserGroup/"><b><span
-lang=EN-US>UK Azure User Group</span></b></a></p>
+--<p class=MsoListParagraph style='+''''+'text-indent:-18.0pt'+'''><span lang=EN-US
+--style='+'''font-family:Symbol'+'''>·<span style='+'''font:7.0pt "Times New Roman"'+'''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+--</span></span><span lang=EN-US>Want to meetup with other likeminded Azure
+--folk?&nbsp; Check out the </span><a
+--href="http://www.meetup.com/UKAzureUserGroup/"><b><span
+--lang=EN-US>UK Azure User Group</span></b></a></p>
 
-<p class=MsoListParagraph style='+'''text-indent:-18.0pt'+'''><span style='+'''font-family:
-Symbol'+'''>·<span style='+'''font:7.0pt "Times New Roman"'+'''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-US>Find out about the datacenters that power the </span><a
-href="http://www.globalfoundationservices.com/"
-><b><span
-lang=EN-US>Microsoft Cloud</span></b></a></p>
+--<p class=MsoListParagraph style='+'''text-indent:-18.0pt'+'''><span style='+'''font-family:
+--Symbol'+'''>·<span style='+'''font:7.0pt "Times New Roman"'+'''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+--</span></span><span lang=EN-US>Find out about the datacenters that power the </span><a
+--href="http://www.globalfoundationservices.com/"
+--><b><span
+--lang=EN-US>Microsoft Cloud</span></b></a></p>
 
-<p class=MsoListParagraph style='+'''text-indent:-18.0pt'+'''><span lang=EN-US
-style='+''''+'font-family:Symbol'+''''+'>·<span style='+''''+'font:7.0pt "Times New Roman"'+'''>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span><span lang=EN-US>Check out the Microsoft Azure Roadmap </span><a
-href="https://azure.microsoft.com/en-us/roadmap/"
-><b><span
-lang=EN-US>here</span></b></a></p>
-<p style = '+'''margin:0cm;margin-bottom:.0001pt;	font-size:11.0pt;font-family:"Calibri",sans-serif;mso-fareast-language:EN-US;'+''''+'>&nbsp;</p>
-</div> </td></tr>','SectionId' =99, 'Section' = 'FooterNote'
+--<p class=MsoListParagraph style='+'''text-indent:-18.0pt'+'''><span lang=EN-US
+--style='+''''+'font-family:Symbol'+''''+'>·<span style='+''''+'font:7.0pt "Times New Roman"'+'''>
+--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+--</span></span><span lang=EN-US>Check out the Microsoft Azure Roadmap </span><a
+--href="https://azure.microsoft.com/en-us/roadmap/"
+--><b><span
+--lang=EN-US>here</span></b></a></p>
+--<p style = '+'''margin:0cm;margin-bottom:.0001pt;	font-size:11.0pt;font-family:"Calibri",sans-serif;mso-fareast-language:EN-US;'+''''+'>&nbsp;</p>
+--</div> </td></tr>'
 
-
+,'SectionId' =99, 'Section' = 'FooterNote'
 union all
 Select 'Data' =' 
 <tr style="height:1.9pt">
 <td width="719" colspan="2" valign="top" style="width:539.5pt;border:solid #4472c4 1.0pt;border-top:none;padding:0cm 5.4pt 0cm 5.4pt;height:1.9pt">
 <p style = '+''''+'margin:0cm;margin-bottom:.0001pt;font-size:11.0pt;font-family:"Calibri",sans-serif'+''''+'><span lang="EN-US"><u></u> <u></u></span></p>
 <p style = '+''''+'margin:0cm;margin-bottom:.0001pt;font-size:11.0pt;font-family:"Calibri",sans-serif'+''''+'>
-<span lang="EN-US" style = '+'''color: brown;'+'''> Please let me know, if you like to <a style = '+'''font-family:Calibri,sans-serif'+''' href="mailto:'+@csaEmailId+'?subject=Azure Newsletter Unsubscribe - ' + @clientName +'" target="_blank">unsubscribe</a> it.' +'<u></u><u></u></span></p>
+<span lang="EN-US" style = '+'''color: brown;'+'''> Please let me know, if you like to <a style = '+'''font-family:Calibri,sans-serif'+''' href="mailto:maniarshashank@gmail.com?subject=Azure Newsletter Unsubscribe - ' + @clientName +'" target="_blank">unsubscribe</a> it.' +'<u></u><u></u></span></p>
 </td>
 </tr>
 
 <tr style="height:1.9pt">
 <td width="719" colspan="2" valign="top" style="width:539.5pt;border:none;padding:0cm 5.4pt 0cm 5.4pt;height:1.9pt">
 <br><br><br>
-<span lang="EN-US"> <i>This automated newletter service is put together by Shashank Maniar for Microsoft UK CSU community.
-Please feel free to share your feedback <a href="'+ 'mailto:shashank.maniar@microsoft.com?subject=Azure Newsletter Feedback - ' + @clientName +'">here</a>
+<span lang="EN-US"> <i>This automated newletter service is put together by Shashank Maniar.
+Please feel free to share your feedback <a href="'+ 'mailto:maniarshashank@gmail.com?subject=Azure Newsletter Feedback - ' + @clientName +'">here</a>
 </i>
 <u></u><u></u></span>
 </td>

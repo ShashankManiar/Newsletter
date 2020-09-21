@@ -79,13 +79,15 @@ Begin
 
 	Insert into [Newsletter].[BlogCategory]( BlogId,CategoryId)
 	Select up.BlogId, a.Categoryid
+	
 	from [Newsletter].[Blogs] up
+	
 	join (
-	select [BlogId]=min(up1.Blogid), itemId, c.categoryId
-	from dbo.Blogs up1
-	join dbo.BlogCategory uc on uc.Blogid = up1.BlogId
-	join [Newsletter].Category c on c.[Description] = uc.Category
-	group by itemid, c.CategoryId) a
+			select [BlogId]=min(up1.Blogid), itemId, c.categoryId
+			from dbo.Blogs up1
+			join dbo.BlogCategory uc on uc.Blogid = up1.BlogId
+			join [Newsletter].Category c on c.[Description] = uc.Category
+				group by itemid, c.CategoryId) a
 	on a.ItemId = up.ItemId
 	where not exists (Select 1 from  [Newsletter].[BlogCategory] uc2
 	where uc2.categoryid = a.CategoryId and uc2.Blogid = up.BlogId)
